@@ -1,0 +1,348 @@
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
+
+$font-color-dim: #676767
+$font-color-dark: #222222
+$title-font-size: 18px
+$normal-font-size: 16px
+$theme-color: #ff7a0d
+$accent-color: #355cdb
+$offset: 80px
+$padding-small: 5px
+$padding: 10px
+$padding-large: 15px
+
+body 
+    font-family: 'Lato', sans-serif
+    font-size: $normal-font-size
+    background: $body-bg
+    overflow-x: hidden
+
+a 
+    text-decoration: none
+    padding: $padding $padding-large
+    font-size: $normal-font-size
+    color: $font-color-dark
+    text-transform: uppercase
+
+    &:hover,&:visited,&:active,&:link,&:focus
+        color: $font-color-dim
+        text-decoration: none
+
+button 
+    @extend .btn
+    height: 70px
+    text-transform: uppercase
+    background-color: #ececec
+    margin: $padding 0
+    font-size: $title-font-size
+    min-width: 70px
+    padding: $padding 2*$padding
+    border-radius: 3px
+    line-height: 1.67;
+    letter-spacing: 2px;
+    
+    &.primary 
+        color: #ffffff
+        background-color: $accent-color
+    
+    &.small
+        height: 60px
+        padding: $padding-large 2*$padding-large
+        font-size: 12px
+        line-height: 1.58;
+        letter-spacing: 1.3px;
+
+.divider 
+  height: 2px
+  border: solid 1px #e0e0e0
+  margin: $padding 0
+  width: 100%
+  clear: both
+
+.chip 
+    @extend .badge
+    background-color: #efefef
+    width: 42px
+    height: 42px
+    border-radius: 50%
+    padding: $padding
+    margin: $padding-small
+    color: $font-color-dark
+    font-size: $normal-font-size 
+   
+    &.active 
+        background-color: transparent
+        border: 2px solid $accent-color
+        color: $accent-color
+        
+        &:hover,&:visited,&:active,&:link
+            color: $font-color-dim
+            text-decoration: none
+
+section 
+    @extend .container
+
+.icon 
+    width: 30px
+    height: 30px
+    margin: 0 $padding-small
+    
+nav 
+    @extend .navbar
+    @extend .navbar-default
+    background-color: transparent
+    border: none
+    padding: $padding
+    margin: 0
+   
+    ul 
+        @extend  .nav
+        @extend  .navbar-nav
+        margin-top: $padding-large
+
+        &>.active
+            >a
+                background-color: transparent 
+                border-bottom: 2px solid $font-color-dark
+
+    ul:last-child
+        @extend  .navbar-right
+
+        &>li
+            >a  
+                text-transform: capitalize
+                
+                span
+                    @extend .chip
+                    @extend .icon
+                    padding: $padding-small $padding
+                    background-color: #ececec
+
+    .nav-logo 
+        position: absolute
+        left: 50%
+        top: $padding-large
+        z-index: -1
+    
+.rating 
+    font-size: 24px
+    color: #c9c9c9
+    .active 
+        color: $theme-color
+    &.small 
+        font-size: 20px
+
+.review-bar 
+  @extend .col-md-2
+  height: 4px
+  border-radius: 1px
+  margin-right: $padding-small
+  width: 18%
+  background-color: #c5c5c5
+  
+  &.active 
+      background-color: $theme-color
+  
+.container
+    width: $container-md
+    overflow: hidden
+    margin: 0 auto
+    position: relative
+
+    .product-title-large
+        font-size: 240px
+        color: #f3f3f3
+        position: absolute
+        top: -$offset
+        left: 0
+        right: 0
+        z-index: -1
+        overflow: hidden
+
+    .product-image-container 
+        @extend .col-md-6
+        text-align: center
+        margin: $offset 0
+
+        img 
+            @extend .img-responsive
+            @extend .center-block
+
+        .product-main 
+            @extend .col-md-12
+            margin: $offset/2 0
+
+        .product-images
+            @extend .col-md-offset-1
+            @extend .col-md-9
+            margin-top: $padding-large
+
+            .product-image
+                @extend .col-md-offset-1
+                @extend .col-md-3
+                padding: 2*$padding $padding-large
+
+                &.active 
+                    border-bottom: 2px solid $font-color-dark
+
+    .product-info 
+        @extend .col-md-offset-1
+        @extend .col-md-5 
+        margin-top: $offset/2
+        margin-bottom: $offset/2
+
+        &>div,p 
+            padding: $padding 0px
+
+        .product-title 
+            font-size: 46px
+            text-transform: uppercase
+            color: $font-color-dark
+            line-height: 1.09
+
+        .product-description 
+            font-size: 18px
+            color: #525252
+            line-height: 1.67
+            margin: $padding 0
+
+        .size-container
+            padding-bottom: $padding-large
+            a
+                text-transform: capitalize
+                text-decoration: underline
+                font-size: $title-font-size
+                padding: 0 $padding-small
+
+        .price 
+            font-size: 56px
+            margin-top: 2*$padding-large
+            padding-top: $padding-large
+            color: $font-color-dark
+            line-height: 0.73
+        
+        .price:before 
+            content: "$"
+            font-size: 56px
+            color: $font-color-dark
+        
+        .action-container
+            button 
+                margin-right: $padding
+
+    .rating-review-container 
+        @extend .row
+        padding-top: 2*$padding-large
+        padding-bottom: 2*$padding-large
+
+        &>div 
+            @extend .col-md-3
+            margin: $padding 0
+            padding: $padding-large
+
+        &>div:last-child
+            @extend .col-md-9
+            border-left: 2px solid #cfcfcf
+            padding: $padding-large 2*$padding-large
+
+        .rating-container 
+            text-align: center
+            margin: $padding-large 0
+
+            .rating-text 
+                font-size: 82px
+                color: $font-color-dark
+                margin-bottom: $padding
+                line-height: 0.74
+            
+            .review-count 
+                padding: $padding-small 0px
+                font-size: $title-font-size
+                border-bottom: 2px solid #262626
+
+        .review-container 
+            @extend .col-md-6
+            padding: 0 20px
+            margin: $padding-large 0
+
+            .review-text 
+                color: #525252
+
+                & span:first-child
+                    float: left
+                    text-transform: uppercase
+
+                & span:last-child
+                    float: right
+                    padding-right: $padding-large
+
+            .review
+                @extend .col-md-12
+                padding: 0
+                margin: $padding-large 0
+                clear: both
+
+    .recommendations 
+        @extend .row
+        margin-top: $padding-large
+        margin-bottom: $padding-large
+        padding: $padding $padding-large
+
+        &>div
+            @extend .col-md-3 
+            padding: $padding $padding-large
+            margin: $padding 0
+            text-align: center
+            
+        p 
+            font-size: 24px
+            padding: $padding
+            margin: $padding
+            line-height: 1.33
+        
+        img 
+            height: 210px
+        
+        .rating
+            margin: $padding
+        
+        &>div:first-child 
+            @extend .col-md-12
+            text-align: start
+            line-height: 1.67
+            font-size: $title-font-size
+
+footer 
+    @extend .row
+    background: #f4f4f4
+    padding: 56px $padding
+
+    .footer-logo-container 
+        @extend .col-md-6
+       
+        img 
+            margin-bottom: 36px 
+       
+        div 
+            color: $font-color-dim
+
+    .footer-content 
+        @extend .col-md-6
+        float: right
+        
+        ul
+            @extend .col-md-4
+            list-style: none
+
+            li:first-child 
+                font-weight:  bold
+                font-size: $title-font-size
+                letter-spacing: 1px
+                color: #000000
+
+            li 
+                padding-top: $padding-small
+                padding-bottom: $padding-small
+                color: $font-color-dim
+                letter-spacing: 0.9px
+            
