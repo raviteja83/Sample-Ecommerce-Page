@@ -8,12 +8,14 @@
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
     "server": "python -m SimpleHTTPServer 8000",
-    "start": "npm-run-all -p watch-css server"
+    "start": "npm-run-all -p watch-css server",
+    "deploy": "npm run build-css && gh-pages -d src"
   },
   "author": "Ravi teja",
   "license": "ISC",
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
+    "gh-pages": "^0.12.0",
     "node-sass": "^4.5.2"
   },
   "devDependencies": {
