@@ -25,8 +25,9 @@ a
     text-transform: uppercase
 
     &:hover,&:visited,&:active,&:link,&:focus
-        color: $font-color-dim
-        text-decoration: none
+        color: $font-color-dim !important
+        text-decoration: none !important
+        background-color: transparent !important
 
 button 
     @extend .btn
@@ -74,10 +75,6 @@ button
         background-color: transparent
         border: 2px solid $accent-color
         color: $accent-color
-        
-        &:hover,&:visited,&:active,&:link
-            color: $font-color-dim
-            text-decoration: none
 
 section 
     @extend .container
@@ -101,9 +98,10 @@ nav
         margin-top: $padding-large
 
         &>.active
-            >a
+            >a,
                 background-color: transparent 
                 border-bottom: 2px solid $font-color-dark
+
 
     ul:last-child
         @extend  .navbar-right

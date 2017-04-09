@@ -6264,8 +6264,9 @@ a {
   text-transform: uppercase; }
 
 a:hover, a:visited, a:active, a:link, a:focus {
-  color: #676767;
-  text-decoration: none; }
+  color: #676767 !important;
+  text-decoration: none !important;
+  background-color: transparent !important; }
 
 button {
   height: 70px;
@@ -6311,10 +6312,6 @@ button.small {
   background-color: transparent;
   border: 2px solid #355cdb;
   color: #355cdb; }
-
-.chip.active:hover, nav ul:last-child > li > a span.active:hover, .chip.active:visited, nav ul:last-child > li > a span.active:visited, .chip.active:active, nav ul:last-child > li > a span.active:active, .chip.active:link, nav ul:last-child > li > a span.active:link {
-  color: #676767;
-  text-decoration: none; }
 
 .icon, nav ul:last-child > li > a span {
   width: 30px;
